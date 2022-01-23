@@ -7,8 +7,6 @@ const reader = readline.createInterface({
   output: process.stdout,
 });
 
-
-// console.log(` `);
 console.log(
 `
 ########     ###     ######   ######  ##      ##  #######  ########  ########  
