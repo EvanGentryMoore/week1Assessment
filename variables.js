@@ -8,7 +8,7 @@ let myName = `Evan Gentry Moore`;
 /* Create a variable called 'faveNum' with a value that is your favorite number. */
 
 //CODE HERE
-let favNum = '42';
+let favNum = 42;
 
 //////////////////PROBLEM 3////////////////////
 /* Create a variable called 'lovesCode' and assign it a boolean value. */
@@ -24,8 +24,7 @@ let lovesCode = true;
 */
 
 //CODE HERE
-if(favNum == 13){ //I used the "double =" instead of a "triple =" because I wanted to show that I know that the "double =" comapres the value of the condition and not the data type (stings = numbers). The "triple =" compares value AND the data type (stings != numbers).
-  console.log(`Lucky 13!`);
+if(favNum === 13){
 } else {
   console.log(`Not Lucky 13`);
 }
