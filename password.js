@@ -45,6 +45,8 @@ reader.question(`Please create your password: `, function(userInput){
     let noSpaceStart = [];
 
     console.log(``);
+    ///////////////////////////////////////////////////////////////////////////
+    //These 3 If statements check if the password is too short, too long, or if it starts with a space, respectivly. When conditions of the password aren't met, the IF statements leave a note for the User.
     if(password.length < 10){
         console.log(`Password is too short.`);
     } else {
@@ -56,23 +58,31 @@ reader.question(`Please create your password: `, function(userInput){
     } else {
             notTooLong.push(true);
     }
-
+    
     if(password[0] === ` `){
         console.log(`Your password cannot start with a space.`);
     } else {
         noSpaceStart.push(true);
     }
-
+    ////////////////////////////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////////////////////////////////////
+    //The For Loop checks each inidvidual character in the User's password and checks the characters against an array. If the character is in the array, then that condition is valid.
     for(let i = 0; i < password.length; i++){
         if(capitalLetter.indexOf(password[i]) !== -1){
             capCheck.push(true);
-        } else if(specialChar.indexOf(password[i]) !== -1){
+        }
+        if(specialChar.indexOf(password[i]) !== -1){
              specCheck.push(true);
-        } else if(number.indexOf(password[i]) !== -1){
+        }
+        if(number.indexOf(password[i]) !== -1){
             numCheck.push(true);
         }
     }
+    ////////////////////////////////////////////////////////////////////////////
 
+    ////////////////////////////////////////////////////////////////////////////
+    //These If statements check if the conditions in the above For Loop have been met. If the condition hasn't been met, they will leave a message for the User.
     if(capCheck[0] !== true){
         console.log(`You need at least one capital letter.`);
     }
@@ -84,7 +94,10 @@ reader.question(`Please create your password: `, function(userInput){
     if(numCheck[0] !== true){
         console.log(`You need at least one number.`)
     }
-
+    ////////////////////////////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////////////////////////////////////
+    //This IF statement checks to see if all the conditions for the password have been met. When all have been met, the User has to type in their password again. If the 2nd input matches the first, Congrats. If it doesn't match, the Useer has to start over.
     if(capCheck[0] === true && specCheck[0] === true && numCheck[0] === true && notTooShort[0] === true && notTooLong[0] === true && noSpaceStart[0] === true){
         console.log(`Password is good.`, `\n`);
         reader.question(`What was your password: `, function(answer){
@@ -110,6 +123,9 @@ reader.question(`Please create your password: `, function(userInput){
         console.log(`Try again.`);
         reader.close();
     }
+    //////////////////////////////////////////////////////////////////
+    //These can be used to help see when what conditions were met in the code. They are not needed for the final product, but are useful for troubleshooting.
+
     // console.log(`capCheck`, capCheck);
     // console.log(`spaceCheck`, specCheck);
     // console.log(`numCheck`, numCheck);
